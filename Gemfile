@@ -48,6 +48,9 @@ end
 # Add Devise gem for user authentication functions
 gem 'devise'
 
+# Add Figaro for sensitive data handling
+gem 'figaro', '1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
