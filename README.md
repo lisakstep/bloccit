@@ -5,4 +5,4 @@ You can see the functional version called lkstephens-bloccit on [Heroku](https:/
 Made with my mentor Xander Miller at [Bloc](http://bloc.io).
 
 ###Setup
-Please note I use a config/application.yml file. Please refer to the template config/application.example.yml for the items contained within my actual .yml file.
+Please note I use a config/application.yml file. Refer to the template config/application.example.yml for the items contained within my actual .yml file.
