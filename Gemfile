@@ -51,6 +51,9 @@ gem 'devise'
 # Add Figaro for sensitive data handling
 gem 'figaro', '1.0'
 
+# Establish categorical access rights with Pundit
+gem 'pundit'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
