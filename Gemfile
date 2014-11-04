@@ -54,6 +54,9 @@ gem 'figaro', '1.0'
 # Establish categorical access rights with Pundit
 gem 'pundit'
 
+# Enable Markdown formatting in my posts
+gem 'redcarpet'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
