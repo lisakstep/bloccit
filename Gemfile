@@ -54,6 +54,9 @@ gem 'figaro', '1.0'
 # Establish categorical access rights with Pundit
 gem 'pundit'
 
+# Add simple_form gem to handle forms
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
