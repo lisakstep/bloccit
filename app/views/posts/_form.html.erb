@@ -1,7 +1,10 @@
  <%= simple_form_for [topic, post] do |f| %>
 
-  <%= f.input :title, as: :string, class:'form-control', placeholder: "Enter post title" %>
-  <%= f.input :body, as: :text, class:'form-control', placeholder: "Enter post body" %>  
+  <%= f.input :title, as: :text, class:'form-control', placeholder: "Enter post title", :input_html => { :cols => 50 } %>
+  <%= f.input :body, as: :text, class:'form-control', placeholder: "Enter post body", :input_html => { :cols => 50, :rows => 8 }%>  
   <%= f.submit "Save", class: 'btn btn-success' %>
+
+
+
 
 <% end %>
