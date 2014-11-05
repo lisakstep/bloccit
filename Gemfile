@@ -57,6 +57,13 @@ gem 'pundit'
 # Enable Markdown formatting in my posts
 gem 'redcarpet'
 
+# Add the following 2 gems to get image uploading capability
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Use Fog to manage AWS cloud storage
+gem 'fog'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
