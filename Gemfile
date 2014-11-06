@@ -64,6 +64,9 @@ gem 'mini_magick'
 # Use Fog to manage AWS cloud storage
 gem 'fog'
 
+# Add pagination with will_paginate
+gem 'will_paginate'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
