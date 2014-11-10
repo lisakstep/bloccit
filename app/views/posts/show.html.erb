@@ -6,13 +6,13 @@
         <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
         submitted <%= time_ago_in_words(@post.created_at) %> ago by 
         <%= @post.user.name %>
-      </small>
+      </small> 
     <p><%= markdown @post.body %></p>
     <% if @post.image? %>
-    <div class="form-group">
-      <%= image_tag( @post.image.url ) %>
-    </div>
-  <% end %>
+      <div class="form-group">
+        <%= image_tag( @post.image.url ) %>
+      </div>
+    <% end %>
   </div>
   <div class="col-md-4">
     <% if policy(@post).edit? %>
@@ -20,3 +20,10 @@
     <% end %>
   </div>
 </div>
+
+
+<!-- Comments section -->
+<div class = "col-md-8">
+    <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
+</div>
+
