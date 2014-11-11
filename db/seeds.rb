@@ -1,6 +1,6 @@
 require 'faker'
 
-Create users
+# Create users
 8.times do 
   user = User.new(
     name: Faker::Name.name,
@@ -36,7 +36,7 @@ posts = Post.all
 # Create comments
 500.times do
   Comment.create!(
-    user: users.sample
+    user: users.sample,
     post: posts.sample,
     body: Faker::Lorem.paragraph
     )
@@ -71,5 +71,6 @@ member.save!
 
 puts "Seeding finished"
 puts "#{User.count} users created"
+puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"
