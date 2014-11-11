@@ -14,8 +14,23 @@ class CommentsController < ApplicationController
       flash[:error] = "There was an error saving the comment. Please try again."
       redirect_to [@topic, @post]
     end
-
   end
+
+  def destroy
+    @topic = Topic.find(params[:topic_id])
+    @post = @topic.posts.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    authorize @comment
+
+    if @comment.destroy
+      redirect_to [@topic, @post], notice: "Comment was deleted successfully."
+    else
+      flash[:error] = "There was an error deleting the comment. Please try again."
+      redirect_to [@topic, @post]
+    end
+  end
+
+  private
 
   def comment_params
     params.require(:comment).permit(:body)
