@@ -67,6 +67,11 @@ gem 'fog'
 # Add pagination with will_paginate
 gem 'will_paginate'
 
+# Install rspec for automated testing
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
