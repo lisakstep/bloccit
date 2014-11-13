@@ -26,7 +26,7 @@
 <div class = "col-md-8">
   
   <%= render partial: 'comments/comment', locals: {post: @post, comment: @comment } %>
-  <% if policy(Comment.new).create? %>
+  <% if policy(@comment).create? %>
     <%= render partial: 'comments/form', locals: { post: @post, comment: @comment } %>
   <% end %>
 </div>
