@@ -1,5 +1,5 @@
 <% @comments.each do |comment| %>
-  <div class="media">
+  <%= content_tag :div, class: 'media', id: "comment-#{comment.id}" do %>
     <div class="media-body">
       <h4 class="media-heading">
         <%= comment.body %>
@@ -12,5 +12,5 @@
         <% end %>
       </small>
     </div>
-  </div>
+  <% end %>
 <% end %>
