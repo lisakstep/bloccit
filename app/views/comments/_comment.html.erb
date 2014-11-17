@@ -8,7 +8,7 @@
         submitted <%= time_ago_in_words(comment.created_at) %> ago by 
         <em><%= comment.user.name %></em><br/>
         <% if policy(comment).destroy? %>
-          <%= link_to "Delete", [@topic, @post, comment], method: :delete%>
+          <%= link_to "Delete", [comment.post, comment], method: :delete%>
         <% end %>
       </small>
     </div>
