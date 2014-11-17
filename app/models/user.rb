@@ -21,10 +21,10 @@ class User < ActiveRecord::Base
   end
 
   def favorited(post)
-    favorites.where(post_id: post.id).first
+    favorites.find_by_post_id post.id
   end
   
   def voted(post)
-    votes.where(post_id: post.id).first
+    votes.find_by_post_id post.id
   end
 end
