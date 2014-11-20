@@ -22,9 +22,6 @@ describe "Visiting profiles" do
 
     end
 
-
-
-
   end
   
 end
