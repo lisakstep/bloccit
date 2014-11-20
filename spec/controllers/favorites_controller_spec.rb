@@ -8,7 +8,8 @@ describe FavoritesController do
   before do
 
       @user = create(:user)
-      post = create(:post, user: @user)
+      @post = create(:post, user: @user)
+      sign_in @user
       
     end
 
