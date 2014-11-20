@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  respond_to :html, :js
 
   def create
     @post = Post.find(params[:post_id])
@@ -17,16 +18,18 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find(params[:topic_id])
-    @post = @topic.posts.find(params[:post_id])
+    @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
     authorize @comment
 
     if @comment.destroy
-      redirect_to [@topic, @post], notice: "Comment was deleted successfully."
+     flash[:notice] = "Comment was deleted."
     else
       flash[:error] = "There was an error deleting the comment. Please try again."
-      redirect_to [@topic, @post]
+    end
+
+    respond_with(@comment) do |format|
+      format.html { redirect_to [@post.topic, @post] }
     end
   end
 
