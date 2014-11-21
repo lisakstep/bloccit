@@ -1,6 +1,5 @@
 require 'rails_helper'
 
-include TestFactories
 include Devise::TestHelpers
 
 describe User do 
