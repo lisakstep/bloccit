@@ -1,7 +1,7 @@
 require 'faker'
 
 # Create users
-5.times do 
+8.times do 
   user = User.new(
     name: Faker::Name.name,
     email: Faker::Internet.email,
@@ -13,7 +13,7 @@ end
 users = User.all
 
 # Create topics
-15.times do
+25.times do
   Topic.create!(
     name: Faker::Lorem.sentence,
     description: Faker::Lorem.paragraph
@@ -23,20 +23,25 @@ topics = Topic.all
 
 
 # Create posts
-50.times do 
-  Post.create!(
+150.times do 
+  post = Post.create!(
     user: users.sample,
     topic: topics.sample,
     title: Faker::Lorem.sentence,
     body: Faker::Lorem.paragraph
     )
+
+  # set the created_at to a time within the past year
+  post.update_attributes!(created_at: rand(10.minutes .. 1.year).ago)
+  post.create_vote
+  post.update_rank
 end
 posts = Post.all
 
 # Create comments
-100.times do
+500.times do
   Comment.create!(
-    # user: users.sample
+    user: users.sample,
     post: posts.sample,
     body: Faker::Lorem.paragraph
     )
@@ -71,5 +76,6 @@ member.save!
 
 puts "Seeding finished"
 puts "#{User.count} users created"
+puts "#{Topic.count} topics created"
 puts "#{Post.count} posts created"
 puts "#{Comment.count} comments created"

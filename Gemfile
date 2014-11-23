@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.10'
@@ -56,6 +57,27 @@ gem 'pundit'
 
 # Enable Markdown formatting in my posts
 gem 'redcarpet'
+
+# Add the following 2 gems to get image uploading capability
+gem 'carrierwave'
+gem 'mini_magick'
+
+# Use Fog to manage AWS cloud storage
+gem 'fog'
+
+# Add pagination with will_paginate
+gem 'will_paginate'
+
+# Install rspec for automated testing
+group :test do
+  gem 'rspec-rails', '~> 3.1.0'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.0'
+end
+
+# Allow performance monitoring with New Relic
+gem 'newrelic_rpm'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
